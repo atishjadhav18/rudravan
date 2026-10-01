@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rudravan | Fresh Microgreens</title>
+
+<meta name="description" content="Rudravan - Fresh, locally grown microgreens from Satara.">
+
+<style>
+:root{
+  --green:#214d35;
+  --light:#f4f8f1;
+  --accent:#86b85a;
+  --dark:#173225;
+  --white:#fff;
+  --muted:#66736b;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  color:var(--dark);
+  background:#fff;
+  line-height:1.6;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #e8eee8;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* LOGO */
+
+.logo{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.logo img{
+  width:150px;
+  height:auto;
+  display:block;
+}
+
+/* NAVIGATION */
+
+nav{
+  display:flex;
+  align-items:center;
+}
+
+nav a{
+  color:var(--dark);
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
+  font-weight:600;
+  transition:.2s;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+  display:inline-block;
+  background:var(--green);
+  color:#fff;
+  text-decoration:none;
+  padding:12px 20px;
+  border-radius:999px;
+  font-weight:700;
+  border:none;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  background:linear-gradient(135deg,#f1f8ed,#fff);
+  padding:90px 22px;
+}
+
+.hero-inner{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:50px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#e2efd9;
+  color:var(--green);
+  padding:7px 13px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:clamp(42px,7vw,72px);
+  line-height:1.02;
+  margin-bottom:20px;
+  letter-spacing:-2px;
+}
+
+.hero p{
+  font-size:18px;
+  color:var(--muted);
+  max-width:590px;
+  margin-bottom:28px;
+}
+
+/* HERO LOGO AREA */
+
+.hero-card{
+  background:#dcebd2;
+  border-radius:32px;
+  min-height:330px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  box-shadow:0 20px 50px rgba(33,77,53,.12);
+}
+
+.hero-card img{
+  width:100%;
+  max-width:420px;
+  height:auto;
+  border-radius:20px;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+  padding:75px 22px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.center{
+  text-align:center;
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--accent);
+  font-weight:800;
+  font-size:12px;
+}
+
+h2{
+  font-size:38px;
+  line-height:1.15;
+  margin:8px 0 12px;
+}
+
+.sub{
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto 35px;
+}
+
+/* ================= CARDS ================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  padding:28px;
+  border:1px solid #e3ebe2;
+  border-radius:22px;
+  background:#fff;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(33,77,53,.08);
+}
+
+.card .icon{
+  font-size:36px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  margin-bottom:7px;
+  font-size:21px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:15px;
+}
+
+.soft{
+  background:var(--light);
+}
+
+/* ================= ORDER ================= */
+
+.order{
+  background:var(--green);
+  color:#fff;
+  border-radius:30px;
+  padding:50px;
+}
+
+.order p{
+  color:#dce9df;
+  margin:8px 0 24px;
+}
+
+.order .btn{
+  background:#fff;
+  color:var(--green);
+}
+
+.form{
+  max-width:650px;
+  margin:30px auto 0;
+  display:grid;
+  gap:12px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:14px 15px;
+  border:1px solid #d9e3da;
+  border-radius:12px;
+  font:inherit;
+  outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--accent);
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#13281c;
+  color:#dbe7df;
+  padding:30px 22px;
+  text-align:center;
+}
+
+footer strong{
+  color:#fff;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+  .nav{
+    padding:10px 16px;
+  }
+
+  .logo img{
+    width:125px;
+  }
+
+  nav a{
+    display:none;
+  }
+
+  .hero{
+    padding:60px 18px;
+  }
+
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .hero-card{
+    min-height:240px;
+  }
+
+  .hero-card img{
+    max-width:350px;
+  }
+
+  h1{
+    font-size:48px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:55px 18px;
+  }
+
+  .order{
+    padding:35px 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="nav">
+
+    <!-- RUDRAVAN LOGO -->
+    <a href="#" class="logo">
+      <img src="rudravan.png" alt="Rudravan Logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Microgreens</a>
+      <a href="#order">Order</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div>
+
+      <span class="badge">
+        Fresh • Local • Naturally Grown
+      </span>
+
+      <h1>
+        Fresh Microgreens from Satara.
+      </h1>
+
+      <p>
+        Rudravan grows fresh microgreens in small batches,
+        with a focus on freshness, quality and local supply.
+      </p>
+
+      <a class="btn" href="#order">
+        Enquire for Bulk Orders
+      </a>
+
+    </div>
+
+
+    <!-- LOGO DISPLAY -->
+
+    <div class="hero-card">
+
+      <img
+        src="rudravan-logo.png"
+        alt="Rudravan Fresh Microgreens Logo"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="container center">
+
+    <span class="eyebrow">
+      Why Rudravan
+    </span>
+
+    <h2>
+      Small batches. Fresh harvest.
+    </h2>
+
+    <p class="sub">
+      Our goal is simple: provide fresh microgreens
+      for homes, cafés, restaurants and healthy-food
+      businesses across Satara.
+    </p>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="icon">
+          🌿
+        </div>
+
+        <h3>
+          Freshly Grown
+        </h3>
+
+        <p>
+          Harvest-focused production to help maintain freshness.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          📦
+        </div>
+
+        <h3>
+          Regular Supply
+        </h3>
+
+        <p>
+          Suitable for regular and bulk enquiries
+          based on availability.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          📍
+        </div>
+
+        <h3>
+          Satara
+        </h3>
+
+        <p>
+          Local delivery and pickup options can be
+          discussed for your order.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="products" class="soft">
+
+  <div class="container center">
+
+    <span class="eyebrow">
+      Our Microgreens
+    </span>
+
+    <h2>
+      Choose your greens
+    </h2>
+
+    <p class="sub">
+      Availability can vary by growing cycle.
+      Contact us for the current batch.
+    </p>
+
+
+    <div class="grid">
+
+      <!-- SUNFLOWER -->
+
+      <div class="card">
+
+        <div class="icon">
+          🌻
+        </div>
+
+        <h3>
+          Sunflower
+        </h3>
+
+        <p>
+          Crisp, nutty and popular for salads
+          and healthy meals.
+        </p>
+
+      </div>
+
+
+      <!-- PEA -->
+
+      <div class="card">
+
+        <div class="icon">
+          🌱
+        </div>
+
+        <h3>
+          Pea Shoots
+        </h3>
+
+        <p>
+          Fresh, crunchy shoots for salads,
+          bowls and dishes.
+        </p>
+
+      </div>
+
+
+      <!-- RADISH -->
+
+      <div class="card">
+
+        <div class="icon">
+          🌶️
+        </div>
+
+        <h3>
+          Radish
+        </h3>
+
+        <p>
+          Fresh, colourful and slightly spicy
+          microgreens.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ORDER ================= -->
+
+<section id="order">
+
+  <div class="container">
+
+    <div class="order">
+
+      <span
+        class="eyebrow"
+        style="color:#b6d68f"
+      >
+        Orders & Enquiries
+      </span>
+
+      <h2>
+        Looking for fresh microgreens?
+      </h2>
+
+      <p>
+        Send your requirement. We can discuss variety,
+        quantity, availability and delivery in Satara.
+      </p>
+
+
+      <form
+        class="form"
+        onsubmit="sendWhatsApp(event)"
+      >
+
+        <input
+          id="name"
+          required
+          placeholder="Your name"
+        >
+
+
+        <input
+          id="phone"
+          placeholder="Phone number"
+        >
+
+
+        <select id="type">
+
+          <option>
+            Home order
+          </option>
+
+          <option>
+            Restaurant / Cafe
+          </option>
+
+          <option>
+            Bulk / Regular order
+          </option>
+
+          <option>
+            Other enquiry
+          </option>
+
+        </select>
+
+
+        <textarea
+          id="message"
+          placeholder="Which microgreens and quantity do you need?"
+        ></textarea>
+
+
+        <button
+          class="btn"
+          type="submit"
+          style="border:0;cursor:pointer"
+        >
+          Send Enquiry on WhatsApp
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <strong>
+    RUDRAVAN
+  </strong>
+
+  · Fresh Microgreens · Satara, Maharashtra
+
+</footer>
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<script>
+
+function sendWhatsApp(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById('name').value;
+
+  const phone =
+    document.getElementById('phone').value;
+
+  const type =
+    document.getElementById('type').value;
+
+  const msg =
+    document.getElementById('message').value;
+
+
+  /*
+    IMPORTANT:
+    Replace 91XXXXXXXXXX
+    with your actual WhatsApp number.
+
+    Example:
+    const number='919876543210';
+  */
+
+  const number = '91XXXXXXXXXX';
+
+
+  const text =
+    `Hello Rudravan,%0A` +
+    `Name: ${encodeURIComponent(name)}%0A` +
+    `Phone: ${encodeURIComponent(phone)}%0A` +
+    `Enquiry: ${encodeURIComponent(type)}%0A` +
+    `Requirement: ${encodeURIComponent(msg)}`;
+
+
+  window.open(
+    `https://wa.me/${number}?text=${text}`,
+    '_blank'
+  );
+
+}
+
+</script>
+
+</body>
+</html>
